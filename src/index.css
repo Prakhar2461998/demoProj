@@ -1,0 +1,36 @@
+.Header
+{
+  text-align:center ;
+  background: black;
+  color: aliceblue;
+  padding: 10px;
+  
+}
+.Add
+{
+  padding:5px;
+  color:whitesmoke;
+  background: yellowgreen;
+}
+.Name
+{
+  word-spacing: 10px;
+}
+.Phonenumber
+{
+word-spacing: 700px;
+
+
+}
+.Number
+{
+  word-spacing: 660px;
+}
+.Delete
+{
+  padding:5px;
+  color:whitesmoke;
+  background: rgb(223, 32, 32);
+  float: inline-end;
+ 
+}

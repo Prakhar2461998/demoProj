@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import App from './App';
+//import ShowSubscribers from './ShowSubscribers';
 import './index.css';
-import AddSubscriber from './AddSubscriber';
+import PhoneDireactory from './PhoneDirectory';
+//import AddSubscriber from './AddSubscriber';
 
 ReactDOM.render(
-  <AddSubscriber />,
+  <PhoneDireactory />,
   document.getElementById('root')
 );

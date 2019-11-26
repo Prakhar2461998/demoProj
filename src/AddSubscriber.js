@@ -1,6 +1,7 @@
 import React from 'react'
 import "./index.css"
 import  "./style.css"
+import {Link} from 'react-router-dom'
 class AddSubscriber extends React.Component
 {
 constructor()
@@ -41,6 +42,8 @@ this.setState({
     phone:' '
 
 })
+this.props.history.push("/");
+
 }
 
 render()
@@ -52,7 +55,8 @@ render()
             Add Subscriber
             </div>
         <div>
-            <button> BACK</button><br />
+           <Link to="/"><button> BACK</button> </Link>
+           <br />
             <br/>
             <form onSubmit={this.onFormSubmitted.bind(this)}> 
                <label >Name</label><br/>

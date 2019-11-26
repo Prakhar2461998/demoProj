@@ -1,34 +1,14 @@
 import React from 'react'
 import Header from './Header'
 import './index.css'
+import {Link} from 'react-router-dom'
 
 class ShowSubscribers extends React.Component
 {
-     constructor()
-     {
-       super()
-           this.state={
-subscribersListToShow:[]
-
-           }
-     
-
-     }
-     componentDidMount()
-     {
-      let newSubscriber ={
-
-        id:1,
-        name:"Prakhar"  ,
-        phone:"8968966689"
-      }
-      let subscriberList =this.state.subscribersListToShow;
-      subscriberList.push(newSubscriber);
-      this.setState({
-         
-             subscribersListToShow:subscriberList
-      });
-     }
+    onDeletedClick = (subscriberId)=>
+    {
+      this.props.deleteSubscriberHandler(subscriberId);
+    }
 
 
   render()
@@ -39,7 +19,7 @@ subscribersListToShow:[]
       <div>
         <Header />
         <div className="component-body-container">
-          <button className="custom-btn add-btn">Add</button>
+       <Link to="/add">   <button className="custom-btn add-btn">Add</button> </Link>
 
           <div className="grid-container heading-container">
             <span className="grid-item name-heading">Name</span>
@@ -50,13 +30,13 @@ subscribersListToShow:[]
       
       
       {
-          this.state.subscribersListToShow.map(sub=>{
+          this.props.subscribersList.map(sub=>{
 
               return <div   className=" grid-container"key={sub.id}>
                 <span className="grid-item">{sub.name}</span>
                 <span className="grid-item">{sub.phone}</span>
 
-                <button className="Delete">Delete</button>
+                <button className="custom-btn delete-btn" onClick={this.onDeletedClick.bind(this, sub.id)}>Delete</button>
                 
                 </div>
 
